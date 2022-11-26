@@ -1,14 +1,27 @@
-import { Heading } from "../components";
+import { Heading, PlayControl } from "../components";
 import bgImage from "../assets/images/bg-high-res.jpg";
+import { selectSoundState } from "../features/sound/soundSlice";
+import { useSelector } from "react-redux";
 export const Home = () => {
+    const sound = useSelector(selectSoundState);
+
     return (
         <div
-            className="min-h-screen bg-fixed bg-cover"
+            className="min-h-screen bg-fixed bg-cover text-white"
             style={{
                 backgroundImage: `url(${bgImage})`,
             }}
         >
             <Heading />
+            <div className="w-full text-center sm:pt-16 pt-10 px-8 font-semibold font-mono">
+                <h1 className="uppercase sm:text-7xl text-6xl">
+                    chill with me
+                </h1>
+                <p className="mt-3 sm:text-lg text-base">
+                    Ambient sounds to wash away distraction.
+                </p>
+            </div>
+            <PlayControl />
         </div>
     );
 };

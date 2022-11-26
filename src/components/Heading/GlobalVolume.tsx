@@ -1,24 +1,37 @@
 import { useEffect, useRef, useState } from "react";
+import {
+    CHANGE_VOLUME,
+    MUTE_SOUND,
+    selectSoundState,
+} from "../../features/sound/soundSlice";
 import { Button } from "../Button/Button";
+import { useSelector, useDispatch } from "react-redux";
+import "./style.css";
 
-export const WebVolume = () => {
-    const [volume, setVolume] = useState(50);
+export const GlobalVolume = () => {
+    const volume = useSelector(selectSoundState).volume;
+    const dispatch = useDispatch();
     const prevVolume = useRef(0);
 
     const handleClick = () => {
         if (volume > 0) {
             prevVolume.current = volume;
-            setVolume(0);
-        } else setVolume(prevVolume.current);
+            dispatch(MUTE_SOUND());
+        } else dispatch(CHANGE_VOLUME(prevVolume.current));
     };
 
     return (
         <div className="hidden sm:flex sm:gap-3 sm:items-center">
-            <div className="">
+            <div className="flex">
                 <input
+                    step={0.01}
                     type="range"
+                    min={0}
+                    max={1}
                     value={volume}
-                    onChange={(e) => setVolume(Number(e.target.value))}
+                    onChange={(e) =>
+                        dispatch(CHANGE_VOLUME(Number(e.target.value)))
+                    }
                 />
             </div>
             <div className="flex">

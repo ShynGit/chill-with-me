@@ -1,0 +1,17 @@
+.stop {
+    border-left: 4.5rem solid #fff;
+    border-top: 2.5rem solid transparent;
+    border-bottom: 2.5rem solid transparent;
+    border-right: 0 solid #fff;
+}
+
+.play {
+    border-left: 1.6rem solid #fff;
+    border-right: 1.6rem solid #fff;
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+}
+
+.pb {
+    transition: border 0.15s linear, opacity 0.1s ease;
+}
