@@ -1,4 +1,4 @@
-import { Heading, PlayControl } from "../components";
+import { Heading, PlayControl, SoundControl } from "../components";
 import bgImage from "../assets/images/bg-high-res.jpg";
 import { selectSoundState } from "../features/sound/soundSlice";
 import { useSelector } from "react-redux";
@@ -7,7 +7,7 @@ export const Home = () => {
 
     return (
         <div
-            className="min-h-screen bg-fixed bg-cover text-white"
+            className="min-h-screen bg-fixed bg-cover text-white pb-20"
             style={{
                 backgroundImage: `url(${bgImage})`,
             }}
@@ -22,6 +22,10 @@ export const Home = () => {
                 </p>
             </div>
             <PlayControl />
+            <div className="flex flex-col sm:flex-row flex-wrap gap-24 px-28 justify-center mt-5">
+                <SoundControl sound={sound.soundList[0]} />
+                <SoundControl sound={sound.soundList[1]} />
+            </div>
         </div>
     );
 };
