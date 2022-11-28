@@ -1,21 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import rain from "../../assets/sound/rain.mp3";
-import thunder from "../../assets/sound/thunder.mp3";
+
+const rain = require("../../assets/sound/rain.mp3");
+const thunder = require("../../assets/sound/thunder.mp3");
 
 export interface SoundState {
     play: Boolean;
     volume: number;
     soundList: [
         {
-            id: number,
-            name: string,
-            src: string,
-            volume: number,
-            iconPositionFill: string,
-            iconPositionOutline: string,
+            id: number;
+            name: string;
+            src: string;
+            volume: number;
+            iconPositionFill: string;
+            iconPositionOutline: string;
         }
     ];
+}
+
+export interface Sound {
+    sound: {
+        id: number;
+        name: string;
+        src: string;
+        volume: number;
+        iconPositionFill: string;
+        iconPositionOutline: string;
+    };
 }
 
 const initialState = {
@@ -54,7 +66,10 @@ export const soundSlice = createSlice({
         CHANGE_GLOBAL_VOLUME: (state, action: PayloadAction<number>) => {
             state.volume = action.payload;
         },
-        CHANGE_SOUND_VOLUME: (state, action: PayloadAction<Object>) => {
+        CHANGE_SOUND_VOLUME: (
+            state,
+            action: PayloadAction<{ id: number; volume: number }>
+        ) => {
             state.soundList[action.payload.id].volume = action.payload.volume;
         },
     },
@@ -67,6 +82,6 @@ export const {
     CHANGE_SOUND_VOLUME,
 } = soundSlice.actions;
 
-export const selectSoundState = (state) => state.sound;
+export const selectSoundState = (state: any) => state.sound;
 
 export default soundSlice.reducer;

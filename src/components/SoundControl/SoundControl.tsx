@@ -7,16 +7,7 @@ import {
 import "./sound.css";
 import icon from "../../assets/images/icon.png";
 
-interface Sound {
-    sound: {
-        id: number;
-        name: string;
-        src: string;
-        volume: number;
-        iconPositionFill: string;
-        iconPositionOutline: string;
-    };
-}
+import { Sound } from "../../features/sound/soundSlice";
 
 export const SoundControl = ({ sound }: Sound) => {
     const soundSlice = useSelector(selectSoundState);
