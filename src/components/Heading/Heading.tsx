@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Navbar } from "../Navbar/Navbar";
 import { GlobalVolume } from "./GlobalVolume";
 

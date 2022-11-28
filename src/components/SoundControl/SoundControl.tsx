@@ -8,6 +8,7 @@ import "./sound.css";
 import icon from "../../assets/images/icon.png";
 
 import { Sound } from "../../features/sound/soundSlice";
+import * as React from "react";
 
 export const SoundControl = ({ sound }: Sound) => {
     const soundSlice = useSelector(selectSoundState);

@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export const Navbar = () => {
     return (
         <div className="font-semibold text-white flex gap-4 underline text-xs sm:text-base">

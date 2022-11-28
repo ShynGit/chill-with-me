@@ -7,6 +7,7 @@ import {
 import { Button } from "../Button/Button";
 import { useSelector, useDispatch } from "react-redux";
 import "./heading.css";
+import * as React from "react";
 
 export const GlobalVolume = () => {
     const volume = useSelector(selectSoundState).volume;

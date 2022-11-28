@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
+import * as toolkit from "@reduxjs/toolkit";
 import soundSlice from "../features/sound/soundSlice";
 
-export const store = configureStore({
+export const store = toolkit.configureStore({
     reducer: {
         sound: soundSlice,
     },

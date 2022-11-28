@@ -2,6 +2,7 @@ import { Heading, PlayControl, SoundControl } from "../components";
 import bgImage from "../assets/images/bg-high-res.jpg";
 import { selectSoundState } from "../features/sound/soundSlice";
 import { useSelector } from "react-redux";
+import * as React from "react";
 export const Home = () => {
     const sound = useSelector(selectSoundState);
 
