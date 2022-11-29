@@ -3,6 +3,9 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 const rain = require("../../assets/sound/rain.mp3");
 const thunder = require("../../assets/sound/thunder.mp3");
+const fire = require("../../assets/sound/fire.mp3");
+const stream = require("../../assets/sound/stream.mp3");
+const bird = require("../../assets/sound/bird.mp3");
 
 export interface SoundState {
     play: Boolean;
@@ -49,6 +52,30 @@ const initialState = {
             volume: 0,
             iconPositionFill: "-400px -200px",
             iconPositionOutline: "-600px -500px",
+        },
+        {
+            id: 2,
+            name: "Fire",
+            src: fire,
+            volume: 0,
+            iconPositionFill: "-300px 0",
+            iconPositionOutline: "-200px -500px",
+        },
+        {
+            id: 3,
+            name: "Stream",
+            src: stream,
+            volume: 0,
+            iconPositionFill: "-400px -100px",
+            iconPositionOutline: "-600px -400px",
+        },
+        {
+            id: 4,
+            name: "Bird",
+            src: bird,
+            volume: 0,
+            iconPositionFill: "-300px -400px",
+            iconPositionOutline: "-400px -400px",
         },
     ],
 };

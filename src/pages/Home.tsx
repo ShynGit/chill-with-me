@@ -26,6 +26,9 @@ export const Home = () => {
             <div className="flex flex-col sm:flex-row flex-wrap gap-24 px-28 justify-center mt-5">
                 <SoundControl sound={sound.soundList[0]} />
                 <SoundControl sound={sound.soundList[1]} />
+                <SoundControl sound={sound.soundList[2]} />
+                <SoundControl sound={sound.soundList[3]} />
+                <SoundControl sound={sound.soundList[4]} />
             </div>
         </div>
     );
